@@ -33,11 +33,11 @@
 	        this.dialogVisible = true;
 	      },
 	      hanldeSuccess(response, file, fileList){
-	      	console.log('file',file)
+
 	      	if(response.code==200){
 	      		var imgUrl = response.result
 	      	}
-	      	console.log('imgUrl',imgUrl)
+
 	      }
 	    }
 	}
