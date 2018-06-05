@@ -18,15 +18,14 @@ const findAll = (findObj) =>{
 
 // 新增会员
 exports.login = (req,res,next)=>{
-
+	
 	const {user,pass} = req.query;
-
+	
 	const obj={user:user}
 
 	findAll(obj)
 		.then((result)=>{
 			const data = result[0];
-			console.log('data',data)
 			if(!data){
 				res.json({
 					code:401,

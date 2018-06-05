@@ -12,7 +12,7 @@
   },
   "betterScripts": {
     "start-node": {
-      "command": "node ./server/app.js",
+      "command": "supervisor ./server/app.js",
       "env": {
         "PORT": 3000
       }
