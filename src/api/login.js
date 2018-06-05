@@ -1,6 +1,6 @@
 import axios from './axios';
 
-export function login(account_id,pwd) {
-	return axios.post(`/login?account_id=${account_id}&pwd=${pwd}`)
+export function login(user,pass) {
+	return axios.post(`/login/login?user=${user}&pass=${pass}`)
 		.then((data)=>data.data)
 }

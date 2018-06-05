@@ -21,10 +21,9 @@ service.interceptors.request.use(config =>{
 		        spinner: 'el-icon-loading',
 		        background: 'rgba(0, 0, 0, 0.7)'
 		     });
-	
-	if(store.state.userInfo.userType){
+	if(store.state.userInfo.token){
 		// 让每个请求头部都携带token信息
-    	config.headers['AccessToken'] = store.state.userInfo.userType
+    	config.headers['AccessToken'] = store.state.userInfo.token
 	}
 	return config
 },error=>{

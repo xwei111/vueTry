@@ -40,34 +40,28 @@ router.beforeEach((to,from,next)=>{
 
   NProgress.done().start()//浏览器进度
 
-  let user = sessionStorage.getItem('user');
-  let pass = sessionStorage.getItem('pass');
-
   let toName = to.name;
   let fromName = from.name;
-  let shortname = store.state.userInfo.shortname;
+  let token = sessionStorage.getItem('token');
 
-  if(!shortname&&fromName!=='Home'&&toName!=='Home'){
-    const userinfoObj={
-            user:user,
-            pass:pass
-          }
-          store.dispatch('getUserInfo',userinfoObj)
-            .then((data)=>{
-              if(data.code=='200'){
-                next();
-              }
-            })
-  }else if(!shortname&&toName!=='Home'){
+  if(!token&&toName!=='Home'){
       next({
         name:'Home'
       })
   }else{
-      if(shortname&&toName==='Home'){
-          sessionStorage.setItem('user','')
-          sessionStorage.setItem('pass','')
-          store.commit('SET_USERINFO',{});
+      if(token&&!fromName){
+        store.commit('SET_USERINFO',{token:token});
+        if(toName=='Home'){
+            next({
+              name:'Main'
+            })
+            return;
+        }else{
+            next();
+          return;
+        }
       }
+
       next()
   }
 })
@@ -94,5 +88,10 @@ function leftMenuF(leftMenu) {
 
   return leftData
 }
+
+// Vue.nextTick()
+//     .then(function () {
+//       alert('a')
+//     })
 
 export default router;

@@ -63,9 +63,8 @@
 
 			            this.getUserInfo(userinfoObj)
 			            	.then((data)=>{
-	            				if(data.code=='200'){
-			       					window.sessionStorage.setItem('user',userinfoObj.user);
-			       					window.sessionStorage.setItem('pass',userinfoObj.pass);
+	            				if(data.code==200){
+			       					window.sessionStorage.setItem('token',data.token);
 			            			this.$message.success(data.msg);
 			            			this.$router.push({path:'/main'})
 			            		}else{

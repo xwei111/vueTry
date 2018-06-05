@@ -1,6 +1,8 @@
 <template>
 	<div>
-		Integral
+		<p @click="IntegralClick">Integral</p>
+
+		<p @click="handleA">aaaaaaaaaaa</p>
 	</div>
 </template>
 
@@ -10,6 +12,14 @@
 		data(){
 			return{
 				
+			}
+		},
+		methods:{
+			IntegralClick:()=>{
+				console.log('thisaaaaaa',this)
+			},
+			handleA(){
+				console.log('thisssss',this)
 			}
 		}
 	}

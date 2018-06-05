@@ -12,7 +12,7 @@
 			</div>
 			<div class="top">
 				<img class='userig' src='../../assets/img/user_icon.jpg'>
-				<span class='name'>{{this.userInfo.shortname}}</span>
+				<span class='name'>{{user}}</span>
 				<span class='back' @click="backHandle">退出</span>
 			</div>
 		</div>
@@ -72,6 +72,7 @@
 
 <script>
 	import {mapMutations,mapGetters} from 'vuex'
+	import jwt from 'jsonwebtoken'
 
 	export default{
 		name:'Main',
@@ -91,10 +92,11 @@
 				routerPath:true,
 				oneOpen:true,
 				selectPath:'',
+				user:''
 			}
 		},
 		created(){
-
+			var that = this;
 			const path = this.$route.path;
 
 			if(path.indexOf('/vipmanage/')>-1){
@@ -108,9 +110,17 @@
 			this.getLeftMenu(this.activeIndex);
 
 			this.selectPath = path;
+
+			jwt.verify(this.userInfo.token, 'secret', function(err, decoded) {
+		      if (!err) {
+		        	that.user = decoded.user
+		      }
+		    })
+
 		},
 		methods:{
 			backHandle(){
+				window.sessionStorage.setItem('token','');
 				this.$router.push({path:'/'})
 			},
 			...mapMutations({

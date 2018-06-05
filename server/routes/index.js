@@ -4,19 +4,6 @@ const axios = require('axios');
 
 const baseUrl = 'http://47.96.158.41:8085';
 
-// 登录
-router.post('/login',(req,res)=>{
-
-	let account_id=req.query.account_id;
-	let pwd = req.query.pwd;
-
-	axios.post(`http://qtest.miyapay.com/cp/login/login!eLogin.action?account_id=${account_id}&pwd=${pwd}`)
-		.then((data)=>{
-			res.json(data.data)
-		})
-
-})
-
 // 会员总数 ${baseUrl}/getMemberTotal?user_type=2&user_code=2016110902663110
 router.get('/memberNum',(req,res)=>{
 

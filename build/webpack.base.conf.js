@@ -11,12 +11,12 @@ function resolve (dir) {
 const webpackConfig = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/main.js'
+    app: './src/main.js'//唯一入口文件
   },
   output: {
-    path: config.build.assetsRoot,
-    filename: '[name].js',
-    publicPath: process.env.NODE_ENV === 'production'
+    path: config.build.assetsRoot,//打包后的文件存放的地方
+    filename: '[name].js',//打包后输出文件的文件名
+    publicPath: process.env.NODE_ENV === 'production'//指定资源文件引用的目录
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },

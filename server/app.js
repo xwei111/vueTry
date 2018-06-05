@@ -5,6 +5,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
+const user = require('./routes/user');
 const index = require('./routes/index');
 const member = require('./routes/member');
 
@@ -28,6 +29,7 @@ app.use( (req, res, next)=> {
 });
 
 app.use('/',index);
+app.use('/login',user);
 app.use('/member',member);
 
 // catch 404 and forward to error handler
