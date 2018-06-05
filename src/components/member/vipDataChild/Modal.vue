@@ -241,7 +241,7 @@
 		}
 	}
 </script>
-<style>
+<style scoped>
 	.sureHide{
 		display: none;
 	}

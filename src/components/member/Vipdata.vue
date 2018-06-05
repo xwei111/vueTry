@@ -270,7 +270,7 @@
 		}
 	}
 </script>
-<style>
+<style scoped>
 	.vipdataBox{
 		padding: 20px;
 	}

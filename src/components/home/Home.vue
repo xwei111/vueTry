@@ -84,7 +84,7 @@
 		},
 	}
 </script>
-<style>
+<style scoped>
 	.content{
 		position: absolute;
 		width: 100%;

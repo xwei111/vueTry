@@ -143,7 +143,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.topfather{
 		width: 1366px;
 		height: 60px;

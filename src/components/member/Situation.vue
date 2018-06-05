@@ -170,7 +170,7 @@
 		}
 	}
 </script>
-<style>
+<style scoped>
 	.topSitu{
 		width: 100%;
 		height: 100px;
