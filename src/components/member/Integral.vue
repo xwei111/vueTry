@@ -16,10 +16,10 @@
 		},
 		methods:{
 			IntegralClick:()=>{
-				console.log('thisaaaaaa',this)
+				console.log('this1',this)
 			},
 			handleA(){
-				console.log('thisssss',this)
+				console.log('this2',this)
 			}
 		}
 	}
