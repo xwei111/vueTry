@@ -47,7 +47,9 @@
 		<el-table
 		  class='table'
 	      :data="vipDataAll.data"
-	      style="width: 100%">
+	      style="width: 100%"
+		  :header-cell-style="textAlign"
+		  >
 	      <el-table-column
 	        prop="name"
 	        label="会员姓名">
@@ -213,7 +215,10 @@
 		        this.ruleForm.currentPage = this.currentPage
 		        let obj = qs.stringify(this.ruleForm)
 				this._vipData(obj);
-		    },
+			},
+			textAlign(){
+				return {'text-align':'center'}
+			},
 		    _vipData(obj){
 
 		    	this.vipDataAllList(obj)

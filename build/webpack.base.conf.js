@@ -28,6 +28,7 @@ const webpackConfig = {
       'components': resolve('src/components'),
       'assets': resolve('src/assets'),
       'api': resolve('src/api'),
+      'indexedDB':resolve('src/indexedDB')
     }
   },
   module: {
