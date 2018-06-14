@@ -187,10 +187,12 @@
 		text-align: center;
 		line-height: 24px;
 		padding-top: 24px;
+		position: relative;
 	}
 	.topSitu li img{
-		position: relative;
-		left: 90px;
+		position: absolute;
+		right: 30px;
+		top: 30px;
 	}
 	.topSitu li:nth-of-type(1){
 		/*font-weight: 900;*/

@@ -135,11 +135,11 @@
 			}
 		},
 		computed:{
-		...mapGetters([
-			'leftMenu',
-			'userInfo',
-		])
-	},
+			...mapGetters([
+				'leftMenu',
+				'userInfo',
+			])
+		},
 	}
 </script>
 

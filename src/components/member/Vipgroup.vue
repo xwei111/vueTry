@@ -1,7 +1,7 @@
 <template>
 	  <div class='vipdataBox'>
 		  	  <!-- 搜索 -->
-			  <el-form :inline="true" :model="ruleForm" status-icon ref="ruleForm" label-width="80px" size='small' label-suffix=':'>
+			<el-form :inline="true" :model="ruleForm" status-icon ref="ruleForm" label-width="80px" size='small' label-suffix=':'>
 				<el-form-item label="姓名" prop="name">
 					<el-input v-model="ruleForm.name" auto-complete="off" style="width: 160px" placeholder='请输入姓名'></el-input>
 				</el-form-item>
